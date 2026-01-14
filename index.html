@@ -1,60 +1,62 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Test de Criatura Fantástica</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <h1>Descubre tu Criatura Fantástica</h1>
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Test de Perfil en Proyectos</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        
+        <h1>Test de Perfil en Proyectos</h1>
+    <p class="subtitulo">
+        Descubre qué rol desempeñas habitualmente cuando trabajas en equipo
+    </p>
 
-    <form id="fantasyForm">
-        <!-- Campo de texto -->
-        <label for="name">Nombre del aventurero:</label>
-        <input type="text" id="name" name="name" placeholder="Tu nombre">
+    <form id="formularioPerfil">
 
-        <!-- Campo numérico -->
-        <label for="age">Edad:</label>
-        <input type="number" id="age" name="age" placeholder="Ej: 25">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre">
 
-        <!-- Email -->
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" placeholder="ejemplo@correo.com">
+        <label for="experiencia">Años de experiencia (estudios o trabajo)</label>
+        <input type="number" id="experiencia" name="experiencia">
 
-        <!-- Select -->
-        <label for="environment">Entorno favorito:</label>
-        <select id="environment" name="environment">
-            <option value="">--Selecciona--</option>
-            <option value="bosque">Bosque 🌲</option>
-            <option value="fuego">Volcán 🔥</option>
-            <option value="hielo">Glaciar ❄️</option>
-            <option value="cielo">Cielo 🌤️</option>
+        <label for="correo">Correo electrónico</label>
+        <input type="email" id="correo" name="correo">
+
+        <label for="contexto">Situación en la que te sientes más cómodo</label>
+        <select id="contexto" name="contexto">
+            <option value=""> Selecciona una opción: </option>
+            <option value="analisis">Análisis y planificación</option>
+            <option value="ejecucion">Trabajo práctico</option>
+            <option value="coordinacion">Organización de personas</option>
+            <option value="creatividad">Generación de ideas</option>
         </select>
 
-        <!-- Checkbox -->
-        <p>Habilidades mágicas:</p>
-        <label><input type="checkbox" name="magic" value="fuerza"> Fuerza 💪</label>
-        <label><input type="checkbox" name="magic" value="vuelo"> Vuelo 🕊️</label>
-        <label><input type="checkbox" name="magic" value="invisibilidad"> Invisibilidad 👻</label>
+        <p class="seccion">Habilidades que utilizas habitualmente</p>
+        <label><input type="checkbox" name="habilidades" value="Organización"> Organización</label>
+        <label><input type="checkbox" name="habilidades" value="Comunicación"> Comunicación</label>
+        <label><input type="checkbox" name="habilidades" value="Resolución de problemas"> Resolución de problemas</label>
+        <label><input type="checkbox" name="habilidades" value="Pensamiento crítico"> Pensamiento crítico</label>
 
-        <!-- Textarea -->
-        <label for="description">Describe tu espíritu aventurero:</label>
-        <textarea id="description" name="description" rows="3"></textarea>
+        <label for="formaActuar">¿Cómo sueles actuar ante un problema complejo?</label>
+        <textarea id="formaActuar" name="formaActuar" rows="3"></textarea>
 
-        <button type="submit">Descubrir criatura</button>
+        <button type="submit">Ver resultado</button>
     </form>
 
-    <!-- Mensajes de validación -->
-    <div id="messages"></div>
+    <div id="mensajes"></div>
 
-    <!-- Resultado dinámico -->
-    <div id="resultContainer"></div>
 
-    <!-- Botones BOM -->
-    <button id="saveBtn">Guardar datos</button>
-    <button id="loadBtn">Restaurar datos</button>
-    <button id="reloadBtn">Recargar página</button>
+    <div class="botonesBOM">
+        <button id="guardarDatos">Guardar datos</button>
+        <button id="restaurarDatos">Restaurar datos</button>
+        <button id="recargarPagina">Recargar página</button>
+    </div>
+
+    <div id="modal">
+        <div id="contenidoModal"></div>
+    </div>
 
     <script src="script.js"></script>
-</body>
-</html>
+    </body>
+    </html>
