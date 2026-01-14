@@ -1,87 +1,43 @@
 body {
-  font-family: Arial, sans-serif;
-  background: #f5f5f5;
+    font-family: Arial, sans-serif;
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #f0f8ff;
 }
 
-.container {
-  max-width: 500px;
-  margin: 40px auto;
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
+h1 {
+    text-align: center;
 }
 
-h1, h2 {
-  text-align: center;
-}
-
-label {
-  display: block;
-  margin-top: 10px;
+form label {
+    display: block;
+    margin-top: 10px;
 }
 
 input, select, textarea {
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
+    width: 100%;
+    padding: 5px;
+    margin-top: 3px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 5px;
 }
 
-textarea {
-  resize: none;
-  height: 80px;
+input.invalid, select.invalid, textarea.invalid {
+    border-color: red;
+    background-color: #ffe6e6;
 }
 
-.radio-group {
-  display: flex;
-  gap: 15px;
-  margin-top: 5px;
-}
-
-button {
-  width: 100%;
-  margin-top: 15px;
-  padding: 10px;
-  background: #28a745;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #218838;
-}
-
-.mensaje {
-  margin-top: 10px;
-  text-align: center;
-  font-weight: bold;
-}
-
-.msgError {
+#messages {
+    margin-top: 10px;
     color: red;
-
-}
-.inputError{
-    border: 1px solid red;
-}
-.inputOk{
-    border: 1px solid green;
 }
 
-
-.reserva {
-  background: #eee;
-  padding: 10px;
-  margin-top: 10px;
-  border-radius: 5px;
+#resultContainer {
+    margin-top: 20px;
+    padding: 10px;
+    border: 2px dashed #333;
+    border-radius: 10px;
+    background-color: #fff;
 }
-
-.reserva button {
-  background: #dc3545;
-  margin-top: 5px;
-}
-
-.reserva button:hover {
-  background: #c82333;
-}
-

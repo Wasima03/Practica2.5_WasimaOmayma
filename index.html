@@ -1,75 +1,60 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Reservas Restaurante</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <title>Test de Criatura Fantástica</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <h1>Descubre tu Criatura Fantástica</h1>
 
-  <div class="container">
-    <h1>Reserva tu mesa</h1>
+    <form id="fantasyForm">
+        <!-- Campo de texto -->
+        <label for="name">Nombre del aventurero:</label>
+        <input type="text" id="name" name="name" placeholder="Tu nombre">
 
-    <form id="formulario">
-      <label>Nombre:</label>
-      <input type="text" id="nombre">
+        <!-- Campo numérico -->
+        <label for="age">Edad:</label>
+        <input type="number" id="age" name="age" placeholder="Ej: 25">
 
-      <small id="msgNombre"></small>
-      
+        <!-- Email -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="ejemplo@correo.com">
 
-      <label>Número de teléfono:</label>
-      <input type="tel" id="telefono">
+        <!-- Select -->
+        <label for="environment">Entorno favorito:</label>
+        <select id="environment" name="environment">
+            <option value="">--Selecciona--</option>
+            <option value="bosque">Bosque 🌲</option>
+            <option value="fuego">Volcán 🔥</option>
+            <option value="hielo">Glaciar ❄️</option>
+            <option value="cielo">Cielo 🌤️</option>
+        </select>
 
-      <label>Número de personas:</label>
-      <input type="number" id="numero">
+        <!-- Checkbox -->
+        <p>Habilidades mágicas:</p>
+        <label><input type="checkbox" name="magic" value="fuerza"> Fuerza 💪</label>
+        <label><input type="checkbox" name="magic" value="vuelo"> Vuelo 🕊️</label>
+        <label><input type="checkbox" name="magic" value="invisibilidad"> Invisibilidad 👻</label>
 
-      <div id="msgNumero"></div>
+        <!-- Textarea -->
+        <label for="description">Describe tu espíritu aventurero:</label>
+        <textarea id="description" name="description" rows="3"></textarea>
 
-      <label>Email:</label>
-      <input type="email" id="email">
-
-      <div class="mensaje" id="msgEmail"></div>
-
-      <label>Fecha:</label>
-      <input type="date" id="fecha">
-
-      <div id="msgFecha"></div>
-
-      <label>Hora de la reserva:</label>
-      <select id="hora">
-        <option value="">-- Selecciona una hora --</option>
-        <option value="13:00">13:00</option>
-        <option value="13:30">13:30</option>
-        <option value="14:00">14:00</option>
-        <option value="14:30">14:30</option>
-        <option value="20:00">20:00</option>
-        <option value="20:30">20:30</option>
-        <option value="21:00">21:00</option>
-        <option value="21:30">21:30</option>
-        <option value="22:00">22:00</option>
-      </select>
-
-      <div id="msgHora"></div>
-
-      <label>Zona:</label>
-      <div class="checkbox">
-        <label><input type="checkbox" name="zona" value="Interior"> Interior</label>
-        <label><input type="checkbox" name="zona" value="Terraza"> Terraza</label>
-      </div>
-
-      <div id="msgZona"></div>
-
-      <label>Comentarios:</label>
-      <textarea id="comentarios"></textarea>
-
-      <button type="submit">Reservar</button>
-      <button type="reset">Cancelar</button>
-
-      <p class="mensaje"></p>
+        <button type="submit">Descubrir criatura</button>
     </form>
 
-  </div>
+    <!-- Mensajes de validación -->
+    <div id="messages"></div>
 
-  <script src="script.js"></script>
+    <!-- Resultado dinámico -->
+    <div id="resultContainer"></div>
+
+    <!-- Botones BOM -->
+    <button id="saveBtn">Guardar datos</button>
+    <button id="loadBtn">Restaurar datos</button>
+    <button id="reloadBtn">Recargar página</button>
+
+    <script src="script.js"></script>
 </body>
 </html>
