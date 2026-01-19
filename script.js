@@ -61,7 +61,7 @@ formulario.experiencia.addEventListener("change", function() {
 });
 
 /*Enviamos el formulario*/
-formulario.addEventListener("submit", function(evento) {
+formulario.addEventListener("submit", function(evento){
     evento.preventDefault();
     mensajes.innerHTML = "";
 
@@ -79,25 +79,87 @@ formulario.addEventListener("submit", function(evento) {
             habilidades.push(checkboxes[i].value);
         }
     }
+});
+
+ formulario.addEventListener("submit", function(evento) {
+    evento.preventDefault();
+    mensajes.innerHTML = "";
 
     var correcto = true;
 
-    if (nombre.length < 3) correcto = false;
-    if (experiencia < 0 || experiencia > 60) correcto = false;
-    if (!correoValido(correo)) correcto = false;
-    if (contexto == "") correcto = false;
-    if (habilidades.length == 0) correcto = false;
+    // NOMBRE
+    if (formulario.nombre.value.length < 3) {
+        mostrarError(formulario.nombre, "Mínimo 3 caracteres");
+        correcto = false;
+    } else {
+        limpiarError(formulario.nombre);
+    }
 
+    // EXPERIENCIA
+    if (formulario.experiencia.value < 0 || formulario.experiencia.value > 60) {
+        mostrarError(formulario.experiencia, "Valor entre 0 y 60");
+        correcto = false;
+    } else {
+        limpiarError(formulario.experiencia);
+    }
+
+    // CORREO
+    if (!correoValido(formulario.correo.value)) {
+        mostrarError(formulario.correo, "Correo no válido");
+        correcto = false;
+    } else {
+        limpiarError(formulario.correo);
+    }
+
+    // CONTEXTO
+    if (formulario.contexto.value === "") {
+        mostrarError(formulario.contexto, "Selecciona un contexto");
+        correcto = false;
+    } else {
+        limpiarError(formulario.contexto);
+    }
+
+    // HABILIDADES (checkbox)
+
+
+
+    var checkboxes = document.getElementsByName("habilidades");
+    var habilidades = [];
+    for (var i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i].checked) {
+            habilidades.push(checkboxes[i].value);
+        }
+    }
+
+    var grupoHabilidades = document.getElementById("grupo-habilidades");
+
+    if (habilidades.length === 0) {
+        mostrarError(grupoHabilidades, "Selecciona al menos una habilidad");
+        correcto = false;
+    } else {
+        limpiarError(grupoHabilidades);
+    }
+
+
+
+    // SI HAY ERRORES, NO MOSTRAMOS RESULTADO
     if (!correcto) {
-        mensajes.innerHTML = "Revisa los campos marcados";
         return;
     }
 
-    // Calculamos el perfil
-    var perfil = calcularPerfilSimple(contexto, habilidades, experiencia);
+    // SI TODO ESTÁ BIEN → MOSTRAR RESULTADO
+    var perfil = calcularPerfilSimple(
+        formulario.contexto.value,
+        habilidades,
+        formulario.experiencia.value
+    );
 
-    // Mostramos el resultado
-    mostrarResultado(nombre, perfil, habilidades, formaActuar);
+    mostrarResultado(
+        formulario.nombre.value,
+        perfil,
+        habilidades,
+        formulario.formaActuar.value
+    );
 });
 
 /*Calculamos el perfil de manera detallada*/
